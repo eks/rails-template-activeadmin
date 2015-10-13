@@ -1,0 +1,46 @@
+pt-BR:
+  edit_button: Editar
+  delete_button: Deletar
+
+  layouts:
+    admin: 
+      welcome: Bem-Vindo
+      loading: Carregando
+      manage_admins: Gerenciar Admins
+      logout: Logout
+
+  admin:
+
+    passwords:
+      new:
+        title: Recupere sua senha
+        send: Enviar
+      edit:
+        title: Recuperar sua senha
+        change_my_password: Mudar minha senha
+
+    shared:
+
+      modal_box:
+        confirmation_title: Confirmação
+        delete_confirmation: Você vai deletar %{name}.
+        are_you_sure: Tem certeza?
+        delete: Deletar
+        cancel: Cancelar
+
+      links:
+        back: Voltar
+        forgot_your_password: Esqueceu sua senha?
+        confirmation_instruction: Não recebeu as instruções de confirmação?
+        unlock_instruction: Não recebeu as instruções para destravar?
+        login_with_provider: Login com %{provider.to_s.titleize}
+
+    admins:
+      index:
+        new_admin: Novo Admin
+      edit:
+        title: Editando Admin
+      new:
+        title: Novo Admin
+      show:
+        title: Admin

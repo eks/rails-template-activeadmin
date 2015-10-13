@@ -1,0 +1,61 @@
+pt-BR:
+  devise:
+    failure:
+      admin:
+        invalid: "Preencha os campos corretamente"
+        unauthenticated: "Por favor, identifique-se"
+        not_found_in_database: "Admin não encontrado"
+    confirmations:
+      new:
+        title: Reenviar instruções de confirmação
+        submit: Reenviar instruções de confirmação
+      link: Não recebeu instruções de confirmação?
+    passwords:
+      admin:
+        updated: Senha alterada com sucesso. =)
+        send_instructions: Confira sua caixa de entrada.
+      edit:
+        title: Mudar sua senha
+        submit: Mudar minha senha
+      new:
+        title: Esqueceu sua senha?
+        submit: Me enviar instruções para reiniciar minha senha
+    registrations:
+      edit:
+        title: Editar {resource}
+        update: Atualizar
+        cancel:
+          title: Cancelar minha conta
+          message: Não está contente?
+          action: Cancelar minha conta
+          confirm: Tem certeza?
+        back: Voltar
+      new:
+        title: Registrar
+        submit: Registrar
+    sessions:
+      admin:
+        signed_in: "Seja bem-vindo"
+        signed_out: "Deslogou com sucesso"
+      new:
+        title: Login
+        submit: Login
+        email: Email
+        password: Senha
+        remember_me: "Lembrar senha"
+      link: Login com {provider}
+    unlocks:
+      new:
+        title: Reenviar instruções de desbloqueio
+        submit: Reenviar instruções de desbloqueio
+      link: Não recebeu instruções de desbloqueio?
+  errors:
+    messages:
+      not_saved: Erro
+  activerecord:
+    errors:
+      models:
+        admin:
+          attributes:
+            email:
+              not_found: não encontrado.

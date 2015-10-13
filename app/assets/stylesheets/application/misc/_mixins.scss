@@ -1,0 +1,120 @@
+// Placeholder text
+// -------------------------
+@mixin placeholder($color) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+
+
+// Retina sprite support
+// -------------------------
+// Source: http://www.w3.org/TR/2002/WD-css3-background-20020802/#background-size
+@mixin retina-sprite($percent) {
+  -webkit-background-size: $percent auto;
+     -moz-background-size: $percent auto;
+          background-size: $percent auto;
+}
+
+// CSS image replacement
+// -------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+@mixin hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+// Drop shadows
+@mixin box-shadow($shadow) { // Multiple shadow solution for SASS
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+// Gradient
+@mixin gradient($first, $second) {
+	background: $first;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from($first), to($second));
+	background: -webkit-linear-gradient($first, $second);
+	background:    -moz-linear-gradient($first, $second);
+	background:     -ms-linear-gradient($first, $second);
+	background:      -o-linear-gradient($first, $second);
+	background:         linear-gradient($first, $second);
+}
+
+// Gradient
+@mixin gradient-image($first, $second, $image) {
+	background: $first;
+	background: $image, -webkit-gradient(linear, 0 0, 0 bottom, from($first), to($second));
+	background: $image, -webkit-linear-gradient($first, $second);
+	background: $image,    -moz-linear-gradient($first, $second);
+	background: $image,     -ms-linear-gradient($first, $second);
+	background: $image,      -o-linear-gradient($first, $second);
+	background: $image,         linear-gradient($first, $second);
+}
+
+// Transitions
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: $transition-delay;
+     -moz-transition-delay: $transition-delay;
+       -o-transition-delay: $transition-delay;
+          transition-delay: $transition-delay;
+}
+
+// Transformations
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin scale($ratio) {
+  -webkit-transform: scale($ratio);
+     -moz-transform: scale($ratio);
+      -ms-transform: scale($ratio);
+       -o-transform: scale($ratio);
+          transform: scale($ratio);
+}
+
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+     -moz-transform: translate($x, $y);
+      -ms-transform: translate($x, $y);
+       -o-transform: translate($x, $y);
+          transform: translate($x, $y);
+}

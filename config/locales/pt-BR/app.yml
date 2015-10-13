@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      admin:
+        one: Admin
+        other: Admins
+
+    attributes:
+      admin:
+        name: Nome
+        password: Senha
+        password_confirmation: Confirmação de Senha
+        email: E-mail
+        remember_me: Lembrar senha

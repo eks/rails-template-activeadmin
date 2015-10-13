@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html dir="ltr" lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+    <%= stylesheet_link_tag "admin/module", media: "all", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <div id="loading-page">
+      <p><%= icon "refresh" %><%= t ".loading" %></p>
+    </div><!-- end of loading-page -->
+
+    <div class="meny">
+      <% if admin_signed_in? %>
+        <nav class="main">
+          <%= menu do |m| %>
+
+            <%= m.admins admin_root_path do %>
+              <%= icon "user" %>
+              Admins
+            <% end %>
+
+            <%= m.test "#" do %>
+              <%= icon "tag" %>
+              Products
+            <% end %>
+
+            <%= m.test "#" do %>
+              <%= icon "photo" %>
+              Banners
+            <% end %>
+
+          <% end %>
+        </nav>
+      <% end %>
+    </div><!-- end of meny -->
+
+    <% if admin_signed_in? %>
+      <div class="meny-arrow"></div>
+    <% end %>
+
+    <div class="contents">
+
+      <% if admin_signed_in? %>
+        <header class="main">
+          <div class="has-icons">
+            <%= link_to "#" do %>
+              <%= icon "sun-o" %>
+              <p>Admin</p>
+            <% end %>
+          </div>
+
+          <div class="right">
+            <div class="has-icons contacts">
+              <%= link_to "#" do %>
+                <%= icon "envelope" %>
+                <span>2</span>
+              <% end %>
+            </div>
+
+            <div class="admin">
+              <%= icon "caret-down" %>
+              <small><%= t ".welcome" %></small>
+              <p><%= current_admin.name %></p>
+              <ul>
+                <li>
+                <%= link_to admin_admins_path do %>
+                  <%= icon "user" %>
+                  <span><%= t ".manage_admins" %></span>
+                <% end %>
+                </li>
+                <li>
+                <%= link_to destroy_admin_session_path, method: :delete do %>
+                  <%= icon "power-off" %>
+                  <span><%= t ".logout" %></span>
+                <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+      <% end %>
+
+      <div class="content">
+
+        <% if notice.present? %>
+          <p id="notice"><%= icon "check", notice %></p>
+        <% end %>
+
+        <% if alert.present? %>
+          <p id="alert"><%= icon "warning", alert %></p>
+        <% end %>
+
+        <%= yield %>
+      </div>
+    </div><!-- end of contents -->
+    <div id="avgrund-content" class="avgrund-popup"></div>
+    <div class="avgrund-cover"></div>
+    <%= javascript_include_tag "admin/module", "data-turbolinks-track" => true %>
+  </body>
+</html>

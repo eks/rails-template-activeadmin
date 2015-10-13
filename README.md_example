@@ -1,0 +1,41 @@
+Application Name
+=========================
+
+## Dependencies
+
+- Ruby 2.2.0-p0
+- Rails 4.2.0
+- PostgreSQL 9.4
+
+## Installing - Backend
+
+### Copy and put your local database configurations.
+```console
+cp config/database.example.yml config/database.yml
+```
+
+### Bundling and migrating the database.
+```console
+bundle install
+./bin/rake db:create db:migrate
+./bin/rake db:test:prepare
+```
+
+## Running test suit with RSpec
+```console
+./bin/rspec
+```
+
+## Deploying
+
+#### Staging
+
+```
+rake deploy:staging
+```
+
+#### Production
+
+```
+rake deploy:production
+```

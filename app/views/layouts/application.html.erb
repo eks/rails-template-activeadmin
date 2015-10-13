@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body data-route="<%= dispatcher_route %>">
+    <div id="main">
+      <%= flash_messages %>
+      <%= yield %>
+    </div>
+    <%= javascript_include_tag "application" %>
+    <%# analytics "UA-XXXXX" %>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+en:
+  edit_button: Edit
+  delete_button: Delete
+
+  layouts:
+    admin: 
+      welcome: Welcome
+      loading: Loading
+      manage_admins: Manage Admins
+      logout: Logout
+
+  admin:
+
+    passwords:
+      new:
+        title: Retrieve your password
+        send: Send
+      edit:
+        title: Change your password
+        change_my_password: Change my password
+
+    shared:
+
+      modal_box:
+        confirmation_title: Confirmation
+        delete_confirmation: You will delete %{name}.
+        are_you_sure: Are you sure?
+        delete: Delete
+        cancel: Cancel
+
+      links:
+        back: Back
+        forgot_your_password: Forgot your password?
+        confirmation_instruction: Didn't received confirmation instructions?
+        unlock_instruction: Didn't received unlock instructions?
+        login_with_provider: Login with %{provider.to_s.titleize}
+
+    admins:
+      index:
+        new_admin: New Admin
+      edit:
+        title: Editing Admin
+      new:
+        title: New Admin
+      show:
+        title: Admin
