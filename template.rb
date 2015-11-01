@@ -159,7 +159,7 @@ CODE
 end
 
 # simple form
-generate 'simple_form:install'
+generate 'simple_form:install --bootstrap'
 
 # rspec
 generate 'rspec:install'
