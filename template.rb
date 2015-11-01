@@ -8,6 +8,9 @@ end
 
 run 'rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml config/database.yml'
 
+get_file 'Gemfile'
+get_file 'config/database.yml'
+
 initializer 'generators.rb', <<-CODE
 module #{app_name.gsub(/-/, '_').camelize}
   class Application < Rails::Application
@@ -46,9 +49,6 @@ module #{app_name.gsub(/-/, '_').camelize}
   end
 end
 CODE
-
-get_file 'Gemfile'
-get_file 'config/database.yml'
 
 # locales
 get_file 'config/locales/en/rails.yml'
