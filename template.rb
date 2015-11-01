@@ -158,6 +158,9 @@ test: &test
 CODE
 end
 
+# simple form
+generate 'simple_form:install'
+
 # rspec
 generate 'rspec:install'
 
