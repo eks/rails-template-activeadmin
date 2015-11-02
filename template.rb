@@ -11,6 +11,9 @@ run 'rm Gemfile app/views/layouts/application.html.erb app/helpers/application_h
 get_file 'Gemfile'
 get_file 'config/database.yml'
 
+# bundling
+run 'bundle install'
+
 initializer 'generators.rb', <<-CODE
 module #{app_name.gsub(/-/, '_').camelize}
   class Application < Rails::Application
@@ -143,9 +146,6 @@ get_file 'app/assets/javascripts/jquery.validate.js'
 run 'mkdir -p app/assets/javascripts/validate/localization'
 get_file 'app/assets/javascripts/validate/localization/messages_pt_BR.js'
 
-# bundling
-run 'bundle install'
-
 inject_into_file 'config/database.yml', after: 'port: 5432' do <<-CODE
 
 development:
@@ -221,21 +221,16 @@ rake 'db:create'
 rake 'db:migrate'
 rake 'db:test:prepare'
 
-# git
-git :init
-git add: '.'
-git commit: %Q{ -m 'First commit' }
-
 generate 'pghero:query_stats'
 rake 'db:migrate'
 
 run 'wheneverize .'
-inject_into_file 'config/schedule.rb', after: '# Learn more: http://github.com/javan/whenever' do <<-RUBY
-  every 5.minutes do
-    rake pghero:capture_query_stats
-  end
-RUBY
-end
+get_file 'config/schedule.rb'
+
+# git
+git :init
+git add: '.'
+git commit: %Q{ -m 'First commit' }
 
 puts '=================================='
 puts 'CHECK SPECS HELPERS spec/rails_helper.rb spec/rails_helper.rb'
