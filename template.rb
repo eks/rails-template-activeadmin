@@ -230,7 +230,7 @@ generate 'pghero:query_stats'
 rake 'db:migrate'
 
 run 'wheneverize .'
-inject_into_file 'config/schedule.rb' do <<-RUBY
+inject_into_file 'config/schedule.rb', after: '# Learn more: http://github.com/javan/whenever' do <<-RUBY
   every 5.minutes do
     rake pghero:capture_query_stats
   end
