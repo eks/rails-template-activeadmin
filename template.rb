@@ -225,6 +225,7 @@ generate 'pghero:query_stats'
 rake 'db:migrate'
 
 run 'wheneverize .'
+run 'rm config/schedule.rb'
 get_file 'config/schedule.rb'
 
 # git
