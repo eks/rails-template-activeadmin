@@ -4,10 +4,11 @@
 // It"s not advisable to add code directly here, but if you do, it"ll appear at the bottom of the
 // the compiled file.
 //
-//= require html5
 //= require jquery
 //= require jquery_ujs
 //= require jquery.validate
+//= require chosen-jquery
+//= require chosen-scaffold
 //= require validate/localization/messages_pt_BR
 //= require turbolinks
 //= require admin/meny
