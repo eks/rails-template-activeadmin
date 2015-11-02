@@ -161,6 +161,9 @@ end
 # simple form
 generate 'simple_form:install --bootstrap'
 
+# pundit
+generate 'pundit:install'
+
 # rspec
 generate 'rspec:install'
 
