@@ -27,6 +27,9 @@ gem 'menu_builder'
 
 gem 'nokogiri'
 gem 'unicorn'
+gem 'dalli'
+gem 'searchkick'
+gem 'ahoy_matey'
 
 group :development do
   gem 'capistrano-rails'

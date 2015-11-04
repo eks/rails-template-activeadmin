@@ -125,6 +125,9 @@ generate 'devise:install'
 # activeadmin
 generate 'active_admin:install'
 
+# ahoy
+generate 'ahoy:stores:active_record -d postgresql-jsonb'
+
 # adding html responder
 inject_into_file 'app/controllers/application_controller.rb', "
   respond_to :html",
