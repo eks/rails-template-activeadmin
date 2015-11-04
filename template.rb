@@ -144,7 +144,7 @@ get_file 'spec/spec_helper.rb'
 run 'mv spec/rails_helper.rb spec/.rails_helper_backup'
 get_file 'spec/rails_helper.rb'
 
-generate 'migration add_name_to_admin name'
+generate 'migration add_name_to_admin_users name'
 
 run 'bundle binstubs rspec-core'
 run 'bundle binstubs guard'
