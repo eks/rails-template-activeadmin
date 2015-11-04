@@ -1,9 +1,0 @@
-<div id="confirmable">
-  <h2><%= t ".confirmation_title" %></h2>
-  <p><%= t ".delete_confirmation", name: name %><br><%= t ".are_you_sure" %></p>
-
-  <div class="button-holder">
-    <button onclick="javascript:Avgrund.hide();" class="button-green back"><%= t ".cancel" %></button>
-    <%= link_to (icon "check-square-o", t(".delete")), [:admin, resource], data: {remote: true}, method: :delete, class: "button-red" %>
-  </div><!-- end of button-holder -->
-</div><!-- end of confirmable -->

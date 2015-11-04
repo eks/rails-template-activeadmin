@@ -19,6 +19,7 @@ gem 'sidekiq'
 gem 'whenever', :require => false
 gem 'simple_form'
 gem 'reform'
+gem 'activeadmin'
 
 gem 'devise'
 gem 'pundit'
