@@ -30,6 +30,7 @@ gem 'unicorn'
 gem 'dalli'
 gem 'searchkick'
 gem 'ahoy_matey'
+gem 'pretender'
 
 group :development do
   gem 'capistrano-rails'
