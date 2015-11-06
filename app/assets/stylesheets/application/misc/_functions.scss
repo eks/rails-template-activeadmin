@@ -20,7 +20,7 @@
 @function flex($target, $context: 14, $unit: "em") {
   $size: remove-unit($target) / remove-unit($context);
 
-  @if $unit == "em" {@return # {$size}em;}
+  @if $unit == "em" {@return #{$size}em;}
   @if $unit == "%" {@return percentage($size);}
 }
 
