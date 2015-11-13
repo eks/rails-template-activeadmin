@@ -98,7 +98,7 @@ get_file 'app/assets/javascripts/jquery.validate.js'
 run 'mkdir -p app/assets/javascripts/validate/localization'
 get_file 'app/assets/javascripts/validate/localization/messages_pt_BR.js'
 
-inject_into_file 'config/database.yml', after: 'port: 5432' do <<-CODE
+inject_into_file 'config/database.yml', after: 'port: 3306' do <<-CODE
 
 development:
   <<: *defaults
