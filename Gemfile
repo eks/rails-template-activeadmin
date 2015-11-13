@@ -4,7 +4,7 @@ gem 'rails', '4.2.5'
 
 # gem 'pg'
 # gem 'pghero'
-gem 'mysql2'
+gem 'mysql2', '>= 0.3.13', '< 0.5'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '~> 5.0'
@@ -34,12 +34,12 @@ gem 'ahoy_matey'
 gem 'pretender'
 
 group :development do
+  gem 'web-console', '~> 2.0'
   gem 'capistrano-rails'
   gem 'spring-commands-rspec'
   gem 'rubocop', require: false
   gem 'spring'
   gem 'pry-rails'
-  # gem 'web-console', '~> 2.0'
   gem 'thin'
   gem 'better_errors'
   gem 'binding_of_caller'
