@@ -147,7 +147,7 @@ get_file 'spec/spec_helper.rb'
 run 'mv spec/rails_helper.rb spec/.rails_helper_backup'
 get_file 'spec/rails_helper.rb'
 
-get_file 'app/assets/javascript/chosen-scaffold.js.coffee'
+# get_file 'app/assets/javascript/chosen-scaffold.js.coffee'
 
 generate 'migration add_name_to_admin_users name'
 

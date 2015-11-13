@@ -15,7 +15,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'font-awesome-sass'
 gem 'rails-footnotes'
-gem 'chosen-rails'
+# gem 'chosen-rails'
 gem 'sidekiq'
 gem 'whenever', :require => false
 gem 'simple_form'
