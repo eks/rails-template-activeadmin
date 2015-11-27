@@ -102,7 +102,7 @@ inject_into_file 'config/database.yml', after: 'port: 5432' do <<-CODE
 
 development:
   <<: *defaults
-  database: #{app_name.gsub(/-/, '_')}_devel
+  database: #{app_name.gsub(/-/, '_')}_development
 
 test: &test
   <<: *defaults
@@ -124,6 +124,14 @@ generate 'devise:install'
 
 # activeadmin
 generate 'active_admin:install'
+get_file 'app/assets/stylesheets/active_admin_custom.css.scss'
+inject_into_file 'config/initializers/active_admin.rb', after: '# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.' do <<-CODE
+  Rails.application.config.assets.precompile += %w( ckeditor/* )
+CODE
+
+inject_into_file 'config/routes.rb', after: 'Rails.application.routes.draw do' do <<-CODE
+  mount Ckeditor::Engine => '/ckeditor'
+CODE
 
 # ahoy
 generate 'ahoy:stores:active_record -d postgresql-jsonb'
