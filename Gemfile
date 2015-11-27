@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.5.rc1'
+gem 'rails', '4.2.5'
 
 gem 'pg'
 gem 'pghero'
@@ -33,6 +33,7 @@ gem 'ahoy_matey'
 gem 'pretender'
 
 group :development do
+  gem 'refills'
   gem 'capistrano-rails'
   gem 'spring-commands-rspec'
   gem 'rubocop', require: false
