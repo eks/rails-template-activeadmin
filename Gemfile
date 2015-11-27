@@ -14,7 +14,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'font-awesome-sass'
 gem 'rails-footnotes'
-gem 'chosen-rails'
 gem 'sidekiq'
 gem 'whenever', :require => false
 gem 'simple_form'
@@ -31,6 +30,9 @@ gem 'dalli'
 gem 'searchkick'
 gem 'ahoy_matey'
 gem 'pretender'
+
+gem 'highcharts-rails'
+gem 'ckeditor'
 
 group :development do
   gem 'refills'
