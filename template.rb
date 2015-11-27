@@ -3,7 +3,7 @@ def get_file(file)
 end
 
 def template_url
-  "https://raw.githubusercontent.com/eks/rails-template-activeadmin/master"
+  "https://raw.githubusercontent.com/eks/rails-template-activeadmin/postgresql"
 end
 
 run 'rm Gemfile app/views/layouts/application.html.erb app/helpers/application_helper.rb app/assets/stylesheets/application.css config/locales/en.yml config/database.yml'
@@ -111,7 +111,7 @@ CODE
 end
 
 # simple form
-generate 'simple_form:install --bootstrap'
+generate 'simple_form:install'
 
 # pundit
 generate 'pundit:install'
