@@ -126,15 +126,13 @@ generate 'devise:install'
 generate 'active_admin:install'
 get_file 'app/assets/stylesheets/active_admin_custom.css.scss'
 
-inject_into_file 'config/initializers/active_admin.rb', after: '# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.' do <<-CODE
-  Rails.application.config.assets.precompile += %w( ckeditor/* )
-CODE
-end
+inject_into_file 'config/initializers/active_admin.rb',
+  after: '# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.',
+  "\n\tRails.application.config.assets.precompile += %w( ckeditor/* )"
 
-inject_into_file 'config/routes.rb', after: 'Rails.application.routes.draw do' do <<-CODE
-  mount Ckeditor::Engine => '/ckeditor'
-CODE
-end
+inject_into_file 'config/routes.rb',
+  after: 'Rails.application.routes.draw do',
+  "\n\tmount Ckeditor::Engine => '/ckeditor'"
 
 # ahoy
 generate 'ahoy:stores:active_record -d postgresql-jsonb'
