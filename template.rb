@@ -45,13 +45,23 @@ module #{app_name.gsub(/-/, '_').camelize}
 end
 CODE
 
-initializer 'asset_pipeline.rb', <<-CODE
-module #{app_name.gsub(/-/, '_').camelize}
-  class Application < Rails::Application
-    config.assets.precompile += [ '.svg', '.eot', '.woff', '.ttf' ]
-  end
-end
+initializer 'assets.rb', <<-CODE
+# Be sure to restart your server when you modify this file.
+
+# Version of your assets, change this if you want to expire all your assets.
+Rails.application.config.assets.version = '1.0'
+
+# Add additional assets to the asset load path
+# Rails.application.config.assets.paths << Emoji.images_path
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+# Precompile additional assets.
+# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+# Rails.application.config.assets.precompile += %w( search.js )
+
+Rails.application.config.assets.precompile += ['.svg', '.eot', '.woff', '.ttf']
 CODE
+
 
 # locales
 get_file 'config/locales/en/rails.yml'
@@ -82,13 +92,6 @@ get_file 'app/assets/stylesheets/application.css'
 get_file 'app/assets/stylesheets/application/imports.scss'
 
 get_file 'app/views/devise/mailer/reset_password_instructions.html.erb'
-
-# aditional assets files
-inject_into_file "config/application.rb",
-  "\n\n\n    config.time_zone = \"Brasilia\" \n    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/*.{rb,yml}').to_s] \n
-    config.i18n.enforce_available_locales = false \n
-    config.i18n.available_locales = [:en, :\"pt-BR\"] \n    config.i18n.default_locale = :\"pt-BR\" \n\n\n\n    # aditional assets \n    config.assets.precompile += [ '.svg', '.eot', '.woff', '.ttf' ]\n    # Fonts path \n    config.assets.paths << Rails.root.join(\"app\", \"assets\", \"fonts\")",
-  after: "# config.time_zone = 'Central Time (US & Canada)'"
 
 # basic js files
 run 'rm app/assets/javascripts/application.js'
