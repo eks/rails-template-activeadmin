@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.5.1'
 
 gem 'pg'
 gem 'pghero'
@@ -19,10 +19,9 @@ gem 'whenever', :require => false
 gem 'simple_form'
 gem 'reform'
 
-gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'devise'
 gem 'pundit'
-gem 'menu_builder'
 
 gem 'nokogiri'
 gem 'unicorn'
@@ -33,6 +32,7 @@ gem 'pretender'
 
 gem 'highcharts-rails'
 gem 'ckeditor'
+gem 'active_model_serializers'
 
 group :development do
   gem 'refills'
